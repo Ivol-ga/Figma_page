@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    font: 16px sans-serif;
+}
+.banner {
+    padding: 50px calc(50% - 660px) 40px;
+    box-sizing: border-box; /*чтобы он не увеличил размер элемента*/
+    background: url(img/bg.png) center / cover no-repeat; /*путь position/size repeat*/
+}
+.header {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: center;
+    color: #ffffff;
+    width: 680px;
+    height: 40px;
+    left: 380px;
+    right: 380px;
+    top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+}
+main {
+    background-color: #fff;
+    padding: 40px calc(50% - 1320/2px); /*Figma зажать Alt - расстояние между элементами */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+} 
+
+.main__caption {
+    font-size: 60px;
+    color: #355342;
+    text-align: center;
+    grid-column-end: span 4; /*линии между столбиками, его конец у 4 столбца.span-занимаю 4 столбца*/
+}
+
+.main__item {
+    height: 225px;
+    padding: 24px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    color: #fff;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap; /*чтобы было 2 строки*/
+    justify-content: space-between;
+    align-content: space-between;
+    /*backdrop-filter: blur(10px); видимость заднего фона*/
+}
+..main__item h3 {
+    font-size: 30px;
+    margin: 0;
+    width: 100%;
+}
+
+.main__item img {
+     height: 30px;
+}
+
+.main__item-text {
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+@media (max-width: 475px) {   /*375px и менее, фрейм*/
+    .banner{
+    padding-left: 30px;
+    padding-right: 30px;
+    }
+    main {
+    padding-left: 30px;
+    padding-right: 30px; 
+    grid-template-columns: 1fr;  
+    gap: 30px; 
+    width: 100%;
+    }
+    .main__caption {
+        grid-column-end: span 1;
+    }
+}
+@media (min-width: 376px) and (max-width: 1399px) {
+    .banner{
+        padding-left: 40px;
+        padding-right: 40px;
+        }
+        main {
+        padding-left: 40px;
+        padding-right: 40px; 
+        grid-template-columns: 1fr 1fr;  
+        }
+        .main__caption {
+            grid-column-end: span 2;
+        }
+
+}
+/* 
+@media (max-width: 1399px) {
+    
+}
+@media (max-width: 475px) {
+
+} */
